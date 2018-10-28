@@ -41,7 +41,7 @@ def main(argv=sys.argv):
 
         # Retrieve directories to watch
         sourcepath = os.path.dirname(args[0])
-        paths = options.include_paths + [sourcepath]
+        paths = options.include_paths + [sourcepath or '.']
 
         observer = Observer()
         for path in paths:
