@@ -19,10 +19,9 @@ $ pip install pysass
 
 ## Usage
 
-Use `pysass` command instead of `pysassc` in order to be able to use `-w` or
+Use `pysass` command instead of `pysassc` in order to use `-w` or
 `--watch` flag additionaly to those provided by
-[libsass-python pysassc](https://sass.github.io/libsass-python/pysassc.html)
-to be able to watch included directories and source directory recursively.
+[libsass-python pysassc](https://sass.github.io/libsass-python/pysassc.html).
 
 eg.
 
