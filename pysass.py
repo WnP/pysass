@@ -45,7 +45,7 @@ def main(argv=sys.argv):
 
         observer = Observer()
         for path in paths:
-            observer.schedule(ScssHandler(argv), path=path)
+            observer.schedule(ScssHandler(argv), path=path, recursive=True)
         observer.start()
 
         try:
