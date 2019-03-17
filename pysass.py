@@ -14,22 +14,22 @@ from watchdog.observers import Observer
 
 def main(argv=sys.argv):
     watch = False
-    if '-w' in argv:
+    if "-w" in argv:
         watch = True
-        argv.remove('-w')
-    if '--watch' in argv:
+        argv.remove("-w")
+    if "--watch" in argv:
         watch = True
-        argv.remove('--watch')
+        argv.remove("--watch")
 
     if watch:
         # Just parsing usefull options
         parser = PassThroughOptionParser()
         parser.add_option(
-            '-I',
-            '--include-path',
-            metavar='DIR',
-            dest='include_paths',
-            action='append',
+            "-I",
+            "--include-path",
+            metavar="DIR",
+            dest="include_paths",
+            action="append",
         )
         options, args = parser.parse_args(argv[1:])
         # Fake parsing others
@@ -41,7 +41,7 @@ def main(argv=sys.argv):
 
         # Retrieve directories to watch
         sourcepath = os.path.dirname(args[0])
-        paths = options.include_paths + [sourcepath or '.']
+        paths = options.include_paths + [sourcepath or "."]
 
         observer = Observer()
         for path in paths:
@@ -85,12 +85,20 @@ def fake_parser(args):
         if ignore_next:
             ignore_next = False
             continue
-        if v in ['-t', '--style', '-s', '--out-style']:
+        if v in ["-t", "--style", "-s", "--out-style"]:
             ignore_next = True
             continue
         if v in [
-            '-m', '-g', '--sourcemap', '-p', '--precision',
-            '--source-comments', '-v', '--version', '-h', '--help'
+            "-m",
+            "-g",
+            "--sourcemap",
+            "-p",
+            "--precision",
+            "--source-comments",
+            "-v",
+            "--version",
+            "-h",
+            "--help",
         ]:
             continue
         out.append(v)
